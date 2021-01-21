@@ -8,25 +8,6 @@ val santaMap: Map<String, List<String>> = hashMapOf(
     "Myran" to listOf("Bladlusen")
 )
 
-/*fun findSuperiors(input : String) : List<String> {
-    fun addSuperior(underling : String, superiorsList : MutableList<String>) : List<String> {
-        println("Checking $underling")
-        return try {
-            val superior = santaMap.filterValues { it.contains(underling)}
-                .keys
-                .first()
-            println("Superior is $superior")
-            superiorsList.add(superior)
-            addSuperior(superior, superiorsList)
-        } catch (e: NoSuchElementException) {
-            superiorsList
-        }
-    }
-    val allSuperiors = mutableListOf<String>()
-    addSuperior(input, allSuperiors)
-    return allSuperiors
-}*/
-
 fun findSuperiors(input: String): List<String> {
     fun addSuperior(underling: String, superiorsList: MutableList<String>): List<String> {
         if (!santaMap.flatMap { it.value }.contains(underling)) return superiorsList
